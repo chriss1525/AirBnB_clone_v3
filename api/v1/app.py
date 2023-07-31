@@ -7,6 +7,8 @@ from api.v1.views import app_views
 from flask import Flask, Blueprint, jsonify
 from flask_cors import CORS
 import os
+import requests
+
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
