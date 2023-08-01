@@ -9,6 +9,7 @@ from models.city import City
 from models.state import State
 from api.v1.views import app_views
 
+
 # route to list all cities
 
 @app_views.route('/states/<state_id>/cities', methods=['GET'],
@@ -22,6 +23,7 @@ def get_cities(state_id):
     for city in state.cities:
         cities.append(city.to_dict())
     return jsonify(cities)
+
 
 # route to get a city by id
 
@@ -47,6 +49,7 @@ def delete_city(city_id):
     storage.save()
     return jsonify({}), 200
 
+
 # route to create a city
 
 @app_views.route('/states/<state_id>/cities', methods=['POST'],
@@ -64,6 +67,7 @@ def create_city(state_id):
     city.state_id = state_id
     city.save()
     return jsonify(city.to_dict()), 201
+
 
 # route to update a city
 
