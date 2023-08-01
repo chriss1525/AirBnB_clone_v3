@@ -23,7 +23,8 @@ def status():
 
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
 def stats():
-    """Returns a JSON: "status": "OK" """
+    """Returns a JSON: number of each objects by type"""
+    stats = {}
     for key, value in classes.items():
-        classes[key] = storage.count(key)
-    return jsonify(classes)
+        stats[value] = storage.count(key)
+    return jsonify(stats)
