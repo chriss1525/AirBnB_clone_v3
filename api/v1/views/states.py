@@ -10,6 +10,7 @@ from models.state import State
 from datetime import datetime
 import uuid
 
+
 # route to list all states
 
 
@@ -63,6 +64,7 @@ def create_state():
         new_state = State(**request.get_json())
         new_state.save()
         return jsonify(new_state.to_dict()), 201
+
 
 # route to update a state
 @app_views.route('/states/<state_id>', methods=['PUT'], strict_slashes=False)
