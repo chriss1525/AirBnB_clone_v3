@@ -11,7 +11,9 @@ from datetime import datetime
 import uuid
 
 # get list of all Place objects
-@app_views.route('/cities/<city_id>/places', methods=['GET'],strict_slashes=False)
+
+
+@app_views.route('/cities/<city_id>/places', methods=['GET'], strict_slashes=False)
 def get_places(city_id):
     """get list of all Place objects"""
     city = storage.get(City, city_id)
@@ -23,7 +25,9 @@ def get_places(city_id):
     return jsonify(places)
 
 # get Place object by id
-@app_views.route('/places/<place_id>', methods=['GET'],strict_slashes=False)
+
+
+@app_views.route('/places/<place_id>', methods=['GET'], strict_slashes=False)
 def get_place(place_id):
     """get Place object by id"""
     place = storage.get(Place, place_id)
@@ -32,7 +36,9 @@ def get_place(place_id):
     return jsonify(place.to_dict())
 
 # delete Place object by id
-@app_views.route('/places/<place_id>', methods=['DELETE'],strict_slashes=False)
+
+
+@app_views.route('/places/<place_id>', methods=['DELETE'], strict_slashes=False)
 def delete_place(place_id):
     """delete Place object by id"""
     place = storage.get(Place, place_id)
@@ -43,7 +49,9 @@ def delete_place(place_id):
     return jsonify({}), 200
 
 # create Place object
-@app_views.route('/cities/<city_id>/places', methods=['POST'],strict_slashes=False)
+
+
+@app_views.route('/cities/<city_id>/places', methods=['POST'], strict_slashes=False)
 def create_place(city_id):
     """create Place object"""
     city = storage.get(City, city_id)
@@ -64,7 +72,9 @@ def create_place(city_id):
     return jsonify(place.to_dict()), 201
 
 # update Place object by id
-@app_views.route('/places/<place_id>', methods=['PUT'],strict_slashes=False)
+
+
+@app_views.route('/places/<place_id>', methods=['PUT'], strict_slashes=False)
 def update_place(place_id):
     """update Place object by id"""
     place = storage.get(Place, place_id)

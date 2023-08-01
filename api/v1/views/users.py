@@ -11,6 +11,8 @@ from datetime import datetime
 import uuid
 
 # get list of all users
+
+
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def get_users():
     """get list of all users"""
@@ -21,6 +23,8 @@ def get_users():
     return jsonify(users_list)
 
 # get user by id
+
+
 @app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
 def get_user(user_id):
     """get user by id"""
@@ -31,6 +35,8 @@ def get_user(user_id):
         abort(404)
 
 # delete user by id
+
+
 @app_views.route('/users/<user_id>', methods=['DELETE'], strict_slashes=False)
 def delete_user(user_id):
     """delete user by id"""
@@ -43,6 +49,8 @@ def delete_user(user_id):
         abort(404)
 
 # create user
+
+
 @app_views.route('/users', methods=['POST'], strict_slashes=False)
 def create_user():
     """create user"""
@@ -58,6 +66,8 @@ def create_user():
     return jsonify(user.to_dict()), 201
 
 # update user by id
+
+
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
 def update_user(user_id):
     """update user by id"""
