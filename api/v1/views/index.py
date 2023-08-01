@@ -20,6 +20,13 @@ classes = {"Amenity": "amenities",
            "State": "states",
            "User": "users"}
 
+classes = {"Amenity": "amenities",
+           "City": "cities",
+           "Place": "places",
+           "Review": "reviews",
+           "State": "states",
+           "User": "users"}
+
 
 @app_views.route('/status', methods=['GET'], strict_slashes=False)
 def status():
@@ -27,7 +34,6 @@ def status():
     return jsonify({"status": "OK"})
 
 
-<<<<<<< HEAD
 @app_views.route('/stats',  methods=['GET'], strict_slashes=False)
 def get_stats():
     """Retrieves the number of each objects by type"""
@@ -39,7 +45,7 @@ def get_stats():
             "users": storage.count(User)
             }
     return jsonify(objs)
-=======
+
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
 def stats():
     """Returns a JSON: number of each objects by type"""
@@ -47,4 +53,3 @@ def stats():
     for key, value in classes.items():
         stats[value] = storage.count(key)
     return jsonify(stats)
->>>>>>> 3e1910784406a73baa2ef096d8da0e16c6dbec33

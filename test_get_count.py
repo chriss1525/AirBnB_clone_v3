@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #!/usr/bin/python3
->>>>>>> ddab3a8ccc69bae4392251f2dc4019c7bf3fc707
-=======
-#!/usr/bin/python3
->>>>>>> 3e1910784406a73baa2ef096d8da0e16c6dbec33
 """ Test .get() and .count() methods
 """
 from models import storage

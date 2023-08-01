@@ -9,15 +9,9 @@ from api.v1.views import app_views
 from flask import Flask, Blueprint, jsonify
 from flask_cors import CORS
 import os
-<<<<<<< HEAD
-<<<<<<< HEAD
 import requests
-=======
 from os import getenv
->>>>>>> ddab3a8ccc69bae4392251f2dc4019c7bf3fc707
-=======
-from os import getenv
->>>>>>> 3e1910784406a73baa2ef096d8da0e16c6dbec33
+
 
 
 app = Flask(__name__)
