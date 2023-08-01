@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
 """initializes a new route"""
-
 from api.v1.views import app_views
 from flask import jsonify, request, abort
 from models import storage
@@ -12,6 +10,7 @@ from models.place import Place
 from models.review import Review
 from models.state import State
 from models.user import User
+
 
 classes = {"Amenity": "amenities",
            "City": "cities",
@@ -45,6 +44,7 @@ def get_stats():
             "users": storage.count(User)
             }
     return jsonify(objs)
+
 
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
 def stats():
