@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+"""initializes a new Flask app"""
+
 # import storage from models
 from models import storage
 from api.v1.views import app_views
@@ -8,7 +10,6 @@ from flask import Flask, Blueprint, jsonify
 from flask_cors import CORS
 import os
 
-"""initializes a new Flask app"""
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
