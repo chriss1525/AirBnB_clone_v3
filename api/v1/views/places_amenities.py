@@ -15,7 +15,8 @@ import uuid
 # GET /places/<place_id>/amenities
 
 
-@app_views.route('/places/<place_id>/amenities', methods=['GET'], strict_slashes=False)
+@app_views.route('/places/<place_id>/amenities', methods=['GET'],
+                 strict_slashes=False)
 def get_amenities_by_place(place_id):
     """Retrieves the list of all Amenity objects of a Place"""
     place = storage.get(Place, place_id)
@@ -29,7 +30,9 @@ def get_amenities_by_place(place_id):
 # DELETE /places/<place_id>/amenities/<amenity_id>
 
 
-@app_views.route('/places/<place_id>/amenities/<amenity_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/places/<place_id>/amenities/<amenity_id>',
+                 methods=['DELETE'],
+                 strict_slashes=False)
 def delete_amenity_by_place(place_id, amenity_id):
     """Deletes a Amenity object to a Place"""
     place = storage.get(Place, place_id)
@@ -47,7 +50,8 @@ def delete_amenity_by_place(place_id, amenity_id):
 # POST /places/<place_id>/amenities/<amenity_id>
 
 
-@app_views.route('/places/<place_id>/amenities/<amenity_id>', methods=['POST'], strict_slashes=False)
+@app_views.route('/places/<place_id>/amenities/<amenity_id>', methods=['POST'],
+                 strict_slashes=False)
 def post_amenity_by_place(place_id, amenity_id):
     """Link a Amenity object to a Place"""
     place = storage.get(Place, place_id)
@@ -65,7 +69,8 @@ def post_amenity_by_place(place_id, amenity_id):
 # GET /places/<place_id>/amenities/<amenity_id>
 
 
-@app_views.route('/places/<place_id>/amenities/<amenity_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/places/<place_id>/amenities/<amenity_id>', methods=['GET'],
+                 strict_slashes=False)
 def get_amenity_by_place(place_id, amenity_id):
     """Retrieves a Amenity object to a Place"""
     place = storage.get(Place, place_id)
@@ -81,7 +86,8 @@ def get_amenity_by_place(place_id, amenity_id):
 # GET /amenities/<amenity_id>/places
 
 
-@app_views.route('/amenities/<amenity_id>/places', methods=['GET'], strict_slashes=False)
+@app_views.route('/amenities/<amenity_id>/places', methods=['GET'],
+                 strict_slashes=False)
 def get_places_by_amenity(amenity_id):
     """Retrieves the list of all Place objects of a Amenity"""
     amenity = storage.get(Amenity, amenity_id)
@@ -95,7 +101,9 @@ def get_places_by_amenity(amenity_id):
 # DELETE /amenities/<amenity_id>/places/<place_id>
 
 
-@app_views.route('/amenities/<amenity_id>/places/<place_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/amenities/<amenity_id>/places/<place_id>',
+                 methods=['DELETE'],
+                 strict_slashes=False)
 def delete_place_by_amenity(amenity_id, place_id):
     """Deletes a Place object to a Amenity"""
     amenity = storage.get(Amenity, amenity_id)
@@ -113,7 +121,8 @@ def delete_place_by_amenity(amenity_id, place_id):
 # POST /amenities/<amenity_id>/places/<place_id>
 
 
-@app_views.route('/amenities/<amenity_id>/places/<place_id>', methods=['POST'], strict_slashes=False)
+@app_views.route('/amenities/<amenity_id>/places/<place_id>', methods=['POST'],
+                 strict_slashes=False)
 def post_place_by_amenity(amenity_id, place_id):
     """Link a Place object to a Amenity"""
     amenity = storage.get(Amenity, amenity_id)
@@ -131,7 +140,8 @@ def post_place_by_amenity(amenity_id, place_id):
 # GET /amenities/<amenity_id>/places/<place_id>
 
 
-@app_views.route('/amenities/<amenity_id>/places/<place_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/amenities/<amenity_id>/places/<place_id>', methods=['GET'],
+                 strict_slashes=False)
 def get_place_by_amenity(amenity_id, place_id):
     """Retrieves a Place object to a Amenity"""
     amenity = storage.get(Amenity, amenity_id)

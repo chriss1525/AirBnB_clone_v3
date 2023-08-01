@@ -13,7 +13,8 @@ import uuid
 # get list of all reviews
 
 
-@app_views.route('/places/<place_id>/reviews', methods=['GET'], strict_slashes=False)
+@app_views.route('/places/<place_id>/reviews', methods=['GET'],
+                 strict_slashes=False)
 def get_reviews(place_id):
     """get list of all reviews"""
     place = storage.get(Place, place_id)
@@ -25,7 +26,8 @@ def get_reviews(place_id):
 # get review by id
 
 
-@app_views.route('/reviews/<review_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/reviews/<review_id>', methods=['GET'],
+                 strict_slashes=False)
 def get_review(review_id):
     """get review by id"""
     review = storage.get(Review, review_id)
@@ -36,7 +38,8 @@ def get_review(review_id):
 # delete review by id
 
 
-@app_views.route('/reviews/<review_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/reviews/<review_id>', methods=['DELETE'],
+                 strict_slashes=False)
 def delete_review(review_id):
     """delete review by id"""
     review = storage.get(Review, review_id)
@@ -49,7 +52,8 @@ def delete_review(review_id):
 # create review
 
 
-@app_views.route('/places/<place_id>/reviews', methods=['POST'], strict_slashes=False)
+@app_views.route('/places/<place_id>/reviews', methods=['POST'],
+                 strict_slashes=False)
 def create_review(place_id):
     """create review"""
     place = storage.get(Place, place_id)
@@ -73,7 +77,8 @@ def create_review(place_id):
 # update review by id
 
 
-@app_views.route('/reviews/<review_id>', methods=['PUT'], strict_slashes=False)
+@app_views.route('/reviews/<review_id>', methods=['PUT'],
+                 strict_slashes=False)
 def update_review(review_id):
     """update review by id"""
     review = storage.get(Review, review_id)
@@ -82,7 +87,8 @@ def update_review(review_id):
     if not request.get_json():
         abort(400, 'Not a JSON')
     for key, value in request.get_json().items():
-        if key not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
+        if key not in ['id', 'user_id', 'place_id',
+                       'created_at', 'updated_at']:
             setattr(review, key, value)
     review.save()
     return jsonify(review.to_dict()), 200
